@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse event </title>
+</head>
+<body>
+    <button id="btn">Click</button>
+    <h1 id="head"></h1>
+    <script>
+        btn.addEventListener("click",()=>{
+            head.innerHTML="clicked"
+        })
+
+         btn.addEventListener("dblclick",()=>{
+            head.innerHTML=" double clicked"
+        })
+
+         btn.addEventListener("mousedown",()=>{
+            head.innerHTML="mouse down event fired"
+        })
+
+         btn.addEventListener("mouseup",()=>{
+            head.innerHTML="mouse up event fired"
+        })
+
+         btn.addEventListener("mousemove",()=>{
+            head.innerHTML="mouse move event fired"
+        })
+
+         btn.addEventListener("mouseover",()=>{
+            head.innerHTML="mouse over event fired"
+        })
+
+
+         btn.addEventListener("mouseout",()=>{
+            head.innerHTML="mouse out event fired"
+        })
+        
+    </script>
+</body>
+</html>

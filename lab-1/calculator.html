@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+
+    <script>
+        a=parseFloat(prompt("Enter a first number: "));
+        b=parseFloat(prompt("Enter a second number: "));
+        op=prompt("Enter 1-add 2-sub 3-mul 4-div");
+
+        if(op=="1"){
+            document.writeln("addition of two number: "+(a+b));
+        }
+        else if(op=="2"){
+            document.writeln("substraction of two number: "+(a-b));
+        }
+        else if(op=="3"){
+            document.writeln("multiplication of two number: "+(a*b));
+        }
+        else{
+            document.writeln("divition of two number: "+(a/b));
+        }
+    </script>
+</body>
+</html>

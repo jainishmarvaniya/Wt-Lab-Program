@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>num To word</title>
+</head>
+<body>
+    <script>
+        let n=parseInt(prompt("Enter your number"))
+        let ones=["","one","two","three","four","five","six","seven","eight","nine","ten"]
+        let tens=["","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","ninetee,"]
+        let hun=["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
+        let number=""
+        if(n<=10){
+            number=ones[n]
+        }
+        else if(n<=20){
+            if(n==20){
+                number=hun[2]
+            }
+            else{
+                number=tens[n-10]
+            }
+            
+        }
+        else if(n<=100){
+            if(n==100){
+                number="hundred"
+            }
+            else if(n<100){
+                number=hun[Math.floor(n/10)] + "&nbsp" + ones[n%10]
+            }
+        }
+        else if(n<=999){
+            number=ones[Math.floor(n/100)] +"&nbsp"+ "hundered "+"&nbsp" + hun[Math.floor((n%100)/10)] +"&nbsp"+ ones[n%10]
+        }
+        document.write(number)
+    </script>
+</body>
+</html>

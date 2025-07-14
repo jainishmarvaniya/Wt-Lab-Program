@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime range</title>
+</head>
+<body>
+
+    <script>
+        flag=0
+        a=parseInt(prompt("Enter a starting range: "))
+
+        b=parseInt(prompt("Enter a ending range"))
+
+        for(i=a+1;i<b;i++){
+            flag=0
+          for(j=2;j<i;j++){
+              if(i%j==0){
+                  flag=1
+                  break;
+              }
+          }
+
+          if(flag==0){
+              document.writeln(i+" ,  ")
+          }
+        }
+    </script>
+</body>
+</html>

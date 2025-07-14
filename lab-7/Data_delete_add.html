@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data delete add</title>
+</head>
+<body>
+    <h1>CRUD Using Array</h1>
+    <input type="text" id="username">
+    <button onclick="addedit()" id="btn">Add</button>
+    <br><br>
+    <table border="2">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Actions</th>
+
+        <tbody id="tblbody">
+
+        </tbody>
+    </table>
+
+    <script>
+         arr=[]
+         editindex=-1
+
+         function display(){
+            temp=''
+
+            for(i=0;i<arr.length;i++){
+                temp+=`<tr>
+                    <td>${i+1}</td>
+                    <td>${arr[i]}</td>
+                    <td><button onclick="editstu(${i})">Edit</button><button onclick="deletestu(${i})">Delete</button></td>
+                    </tr>`
+            }
+
+            document.getElementById("tblbody").innerHTML=temp
+         }
+
+         function addedit(){
+             username=document.getElementById("username").value
+             
+             if(editindex!=-1){
+                arr[editindex]=username
+                 editindex=-1
+                 btn.innerHTML='ADD'
+             }else{
+             if(username==""){
+                alert("Please Enter a Name")
+             }
+             else{
+                 arr.push(username)
+             }
+            }
+             document.getElementById("username").value=' '
+                display()
+         }
+
+         function deletestu(idx){
+                arr.splice(idx,1)
+                display()
+         }
+
+         function editstu(idx){
+               editindex=idx
+               document.getElementById('username').value=arr[idx]
+               btn.innerHTML='Edit'
+         }
+
+    </script>
+</body>
+
+
+</html>

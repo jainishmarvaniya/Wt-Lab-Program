@@ -1,0 +1,248 @@
+<!-- Write a JavaScript program to validate user data given from the HTML form (A)
+ 1) username must be of minimum 8 characters
+ 2) password must contain at least 1 digit and 1 special character and should be between 8
+    12 characters
+ 3) password and repeat password must be same
+ 4) age must be greater than 18 (calculate from date of birth)
+ 5) enrollment must be of 11 digits
+ 6) email validation -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>form validation</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        height: 100vh;
+        margin: 40px;
+    }
+
+    .middle{
+         display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    form {
+      background-color:bisque;
+      padding: 20px;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color:cornflowerblue;
+    }
+       @keyframes borderGlow {
+  0% { border-color: red; box-shadow: 0 0 10px red; }
+  25% { border-color: orange; box-shadow: 0 0 15px orange; }
+  50% { border-color: yellow; box-shadow: 0 0 20px yellow; }
+  75% { border-color: lime; box-shadow: 0 0 15px lime; }
+  100% { border-color: cyan; box-shadow: 0 0 10px cyan; }
+}
+.middle {
+  width:18%;
+  margin-left:750px;
+  position: relative;
+  animation: borderGlow 2s infinite alternate; /* Apply animation */
+}
+  </style>
+</head>
+<body>
+
+  <h2>User Registration Form</h2>
+  <div class="middle">
+  <form id="userForm" onsubmit="return validateForm()" novalidate>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+    <span id="errmsgforname"></span>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <span id="errmsgforpassword"></span>
+
+    <label for="repeatPassword">Repeat Password</label>
+    <input type="password" id="repeatPassword" name="repeatPassword" required>
+    <span id="errmsgforrepassword"></span>
+
+    <label for="dob">Date of Birth (age > 18)</label>
+    <input type="date" id="dob" name="dob" required>
+    <span id="errmsgfordate"></span>
+
+    <label for="enrollment">Enrollment Number (11 digits)</label>
+    <input type="text" id="enrollment" name="enrollment" required>
+    <span id="errmsgforenroll"></span>
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" required>
+    <span id="errmsgforemail"></span>
+
+    <input type="submit" value="Register">
+    </form>
+    </div>
+
+    <script>
+    //     function validateForm() {
+    //   const username = document.getElementById("username").value;
+    //   const password = document.getElementById("password").value;
+    //   const repeatPassword = document.getElementById("repeatPassword").value;
+    //   const dob = document.getElementById("dob").value;
+    //   const enrollment = document.getElementById("enrollment").value;
+    //   const email = document.getElementById("email").value;
+
+    //   // 1. Username validation
+    //   if (username.length < 8) {
+    //     alert("Username must be at least 8 characters long.");
+    //     return false;
+    //   }
+
+    //   // 2. Password validation
+    //   const passRegex = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,12}$/;
+    //   if (!passRegex.test(password)) {
+    //     alert("Password must be 8-12 characters long and include at least one digit and one special character.");
+    //     return false;
+    //   }
+
+    //   // 3. Confirm Password check
+    //   if (password !== repeatPassword) {
+    //     alert("Passwords do not match.");
+    //     return false;
+    //   }
+
+    //   // 4. Age validation
+    //   const birthDate = new Date(dob);
+    //   const today = new Date();
+    //   const age = today.getFullYear() - birthDate.getFullYear();
+    //   const monthDiff = today.getMonth() - birthDate.getMonth();
+    //   const dayDiff = today.getDate() - birthDate.getDate();
+    //   const realAge = monthDiff < 0 || (monthDiff === 0 && dayDiff < 0) ? age - 1 : age;
+
+    //   if (realAge < 18) {
+    //     alert("Age must be greater than 18.");
+    //     return false;
+    //   }
+
+    //   // 5. Enrollment number validation
+    //   pattern = "^[0-4]{2}[0-1]{2}[0-1]{2}[0-1]{2}[0-9]{3}$"
+    //   if (!pattern.test(enrollment)) {
+    //     alert("Enrollment number must be exactly 11 digits.");
+    //     return false;
+    //   }
+
+    //   // 6. Email validation
+    //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //   if (!emailRegex.test(email) || email === null) {
+    //     alert("Please enter a valid email address.");
+    //     return false;
+    //   }
+
+    //   alert("Form submitted successfully!");
+    //   return true;
+    // } 
+
+             document.getElementById("username").addEventListener("blur",()=>{
+             uerna=document.getElementById("username").value
+
+             if(uerna.length<8){
+                errmsgforname.innerHTML="username must be 8 character"
+                username.style.border="1px solid red"
+                errmsgforname.style.color="red"
+             }
+          })
+
+          document.getElementById("password").addEventListener("blur",()=>{
+             pass=document.getElementById("password").value
+              
+               const passRegex = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,12}$/;
+               if (!passRegex.test(password)) {
+                 errmsgforpassword.innerHTML="password must be 8 and 12 between char and  <br>1 special char and one is digit "
+                  password.style.border="1px solid red"
+                  errmsgforpassword.style.color="red"
+             }
+           })
+            
+           document.getElementById("repeatPassword").addEventListener("blur",()=>{
+             pass1=document.getElementById("repeatPassword").value
+              
+               const passRegex = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,12}$/;
+               if (!passRegex.test(repeatPassword)) {
+                 errmsgforrepassword.innerHTML="password is not match "
+                  repeatPassword.style.border="1px solid red"
+                  errmsgforrepassword.style.color="red"
+             }
+           })
+
+                      document.getElementById("dob").addEventListener("blur",()=>{
+                      date1=document.getElementById("dob").value
+                 const birthDate = new Date(dob);
+                 const today = new Date();
+                const age = today.getFullYear() - birthDate.getFullYear();
+                 const monthDiff = today.getMonth() - birthDate.getMonth();
+                 const dayDiff = today.getDate() - birthDate.getDate();
+                  const realAge = monthDiff < 0 || (monthDiff === 0 && dayDiff < 0) ? age - 1 : age;
+
+                if (realAge < 18) {
+                     errmsgfordate.innerHTML="Age must be greater than 18 "
+                     dob.style.border="1px solid red"
+                     errmsgfordate.style.color="red"
+                 }
+           })
+
+            document.getElementById("enrollment").addEventListener("blur",()=>{
+             enrol=document.getElementById("enrollment").value
+                pattern = "^[0-4]{2}[0-1]{2}[0-1]{2}[0-1]{2}[0-9]{3}$"
+              if (!pattern.test(enrollment)) {
+                    errmsgforenroll.innerHTML="enrollment number exactly 11 char"
+                     enrollment.style.border="1px solid red"
+                     errmsgforenroll.style.color="red"
+        
+              }
+           })
+
+           document.getElementById("email").addEventListener("blur",()=>{
+             email1=document.getElementById("email").value
+               const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email) || email === null) {
+                 errmsgforemail.innerHTML="Email is not valid"
+                     email.style.border="1px solid red"
+                     errmsgforemail.style.color="red"
+              }else{
+                   document.write("Form submitted succesfully")
+              }
+           })
+
+
+    </script>
+</body>
+</html>

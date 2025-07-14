@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palidrom</title>
+</head>
+<body>
+
+    <script>
+        n=parseInt(prompt("Enter a number: "));
+        temp=n
+        rem=1,r=0,i=0
+
+        while(n!=0){
+            rem=n%10
+            r=r*10+rem
+            n=Math.floor(n/10)
+            
+        }
+        if(temp==r){
+            document.write("number is palidrom")
+        }
+        else{
+            document.write("number is not palidrom")
+        }
+    </script>
+</body>
+</html>

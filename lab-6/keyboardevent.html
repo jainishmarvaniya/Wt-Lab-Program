@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard event </title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <h1 id="head"></h1>
+    <script>
+           document.body.addEventListener("keydown",(e)=>{
+             head.innerHTML=e.key + " "+ e.type
+        
+          })
+          document.body.addEventListener("keyup",(e)=>{
+             document.innerHTML=e.key + " "+ e.type
+          
+        })
+         document.body.addEventListener("keypress",(e)=>{
+             head.innerHTML=e.key+ " " + e.type
+        })
+    </script>
+</body>
+</html>

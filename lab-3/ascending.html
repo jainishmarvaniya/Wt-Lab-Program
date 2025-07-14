@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ascending order</title>
+</head>
+<body>
+  <script>
+     size=parseInt(prompt("Enter a size: "))
+     arr=[]
+
+     for(i=0;i<size;i++){
+        arr[i]=prompt("Enter a array element: ")
+    
+        }
+
+        for(i=0;i<size;i++){
+            for(j=i+1;j<size;j++){
+                if(arr[i]>arr[j]){
+                    temp=arr[i]
+                    arr[i]=arr[j]
+                    arr[j]=temp
+                }
+            }
+        }
+         document.write(arr)
+     
+  </script>  
+</body>
+</html>
