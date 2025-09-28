@@ -1,0 +1,333 @@
+/* Subscribe section input and button width */
+.subscribe input.form-control {
+  width: 60% !important;
+  margin: 0 auto 8px auto;
+  display: block;
+}
+.subscribe .home button {
+  width:90% !important;
+  margin: 0 auto;
+  height:40px;
+  padding-top:5px;
+}
+body {
+  background-color: #f4f1e8; 
+  padding: 10px;
+}
+.navbar{
+    background-image: linear-gradient(to right,white);
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .navbar .navbar-nav .nav-link, .navbar .Bhagavad {
+     background: linear-gradient(to top,black);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    z-index: 5;
+  }
+  .im{
+    z-index: -1;
+  }
+ .read-now-btn {
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 8px;    
+      padding: 10px 26px;    
+      font-size: 18px;       
+      font-weight: 400;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+      transition: all 0.2s ease;
+    }
+
+    .read-now-btn:hover {
+      background-color: #f5f5f5;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+.foo a{
+  text-decoration: none;
+  color:light black;
+}
+.see{
+  text-decoration: none;
+   color:black;
+  font-weight:800;
+  float: left;
+  margin-left:73px;
+}
+.Bhagavad a{
+  color: coral;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  background-color: #f8f9fa; 
+  color: #222; 
+  padding: 16px 0;
+  border-top: 1px solid #ddd;
+}
+
+
+
+footer a {
+  display: inline-block;
+  margin-right: 16px;
+  color: #222;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+footer a:hover {
+  color: #007bff;
+}
+footer {
+  white-space: nowrap;
+}
+.home button {
+  background-color: orange;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: 0.3s;
+
+  margin-bottom: 20px;
+}
+
+.home button:hover {
+  background-color: #800000;
+  color: #ffffff;           
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(135deg, #fffde4 0%, #f7e8d0 100%);
+  color: #333;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+
+}
+.card:hover h6{
+  transform: translateY(-10px);
+  background: none;
+  color: #333;
+  
+}
+
+.card h6{
+    color: orange;
+}
+footer{
+    border-radius: 20px;
+}
+.hero-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .quote-text {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #000;
+      text-align: center;
+    }
+    .quote-number {
+      text-align: center;
+      color: #e67e22;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  .quote-number {
+  font-weight: bold;
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+.or{
+   color:rgb(250, 208, 129);
+}
+
+.quote-text {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #333;
+  line-height: 1.6;
+}
+
+.theme-label {
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin-left: 10px;
+}
+.text12{
+    margin-left:25px;
+    margin-top:30px;
+    font-family: sans-serif;
+}
+
+.text{
+  font-size:1.0rem;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+ font-weight:400;
+}
+#textp{
+font-size: 1.25rem;
+  font-style: italic;
+  color: #ffae00;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+ font-weight: 700;
+}
+.text h1{
+  font-style: italic;
+  color: #333;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+ font-weight: 500;
+  color: coral;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: xxx-large;
+}
+ .navbar {
+      background-color: #fff;
+      padding: 0.6rem 2.5rem; 
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin-right: 2rem;
+    }
+    .nav-link {
+        font-weight: 500;
+        font-size: 0.85rem;
+        color: #474343 !important;
+        margin-left:25px;
+        margin-right: 0;
+    }
+    .nav-link:hover {
+      color: #ff6600 !important;
+    }
+    .donate-link {
+      font-weight: 600;
+      text-decoration: underline;
+      color: #ff4500 !important;
+    }
+
+    .dropdown-menu {
+      min-width: 440px;
+      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+    }
+    .chapter-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 30px;
+      margin-top: 10px;
+    }
+    .chapter-list a {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 0.92rem;
+      color: #282222;
+      text-decoration: none;
+    }
+    .chapter-list a:hover {
+      color: #ff6600;
+    }
+    .chapter-list i {
+      margin-right:8px;
+      font-size: 1rem;
+      color: #ff6600;
+    }
+    .search-box {
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      padding: 5px 12px;
+      width:170px;
+      font-size: 0.9rem;
+    }
+    .icon-btn {
+      border: none;
+      background: none;
+      margin-left: 12px;
+      font-size: 1.2rem;
+      color: #222020;
+      cursor: pointer;
+    }
+    .lang-flag {
+      width: 26px;
+      height: 18px;
+    }
+    .gitaa{
+        font-size:0.5px;
+    }
+    .nav-item{
+         margin-left:-20px;
+    }
+.bootomofimage{
+   padding:21px;
+   font-size:11px;
+   font-weight:100px;
+   background-color: white;
+   height:135px;
+   position:relative;
+   margin-top:150px;
+   border: 1px solid white;
+   border-radius:5%;
+   background-color:white;
+   width:50%;
+   margin-bottom:25px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 16px;
+}
+.subscribe-section {
+  position: relative;
+  background-color: #f2d8bf; 
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+  height:300px;
+}
+.subscribe-section h2 {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+.subscribe-form {
+  position: relative;
+  z-index: 1;
+}
+.subscribe-form input {
+  height: 52px;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 0 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.subscribe-form .btn-subscribe {
+  height: 52px;
+  border-radius: 6px;
+  background: #ff7a00;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
