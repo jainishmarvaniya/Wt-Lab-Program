@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hide to click</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Hello jainish</h1>
+     <p>Lorem ipsum dolor sit amet consectetur.</p>
+     <p>Lorem ipsum dolor sit amet consectetur.</p>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+      
+       <ul class="myEle">
+        <li>first</li>
+         <li>second</li>
+          <li>third</li>
+    </ul>
+
+    <input type="text">
+    <script>
+       $(document).ready(function(){
+         $("body *").click(function(){
+            $(this).hide()
+         })
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud using jquery</title>
+         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <script>
+        editindex=-1
+        students=[
+            {name:"balasir",rollno:101,dept:"cse",imageurl:"https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/15---28-04-2023-02-07-35.jpg"},
+            {name:"washimsir",rollno:102,dept:"civil",imageurl:"https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/317---28-04-2023-01-32-29.jpg"},
+        ];
+
+        $(document).ready(function (){
+             displayData();
+
+             $("#saveStudent").click(function (){
+                 let rollno= $("#txtRollNo").val();
+                 let name= $("#txtName").val();
+                 let dept= $("#txtDept").val();
+                 let imageurl= $("#txtImagaeUrl").val();
+
+
+                 let data={rollno,name,dept,imageurl}
+
+                 students.push(data);
+                 displayData();
+             })
+        })
+
+        function displayData(){
+            let formatedData = students.map((s)=>{
+                    
+                let temp="<tr>"
+
+                    temp+="<td>"+s.name+"</td>"
+                    temp+="<td>"+s.rollno+"</td>"
+                    temp+="<td>"+s.dept+"</td>"
+                    temp+="<td><img width='50px' src='"+s.imageurl +"'/></td>";
+                    temp += "<td><button onclick='deleteStudent("+s.rollno+")'>Delete</button></td>"
+                    temp+="</tr>"
+                    return temp;
+                });
+
+                 
+                  let finalData = "<table border=1>"+formatedData.join("")+"</table>";
+                  $("#dataDisplay").html(finalData);
+            }
+
+            function deleteStudent(rn){
+                const deletetoindex= students.findIndex((s)=>{
+                    return s.rollno=rn;
+
+                });
+                students.splice(deletetoindex,1);
+                displayData();
+            }
+                
+    </script>
+
+    <table>
+       <tr>
+        <td>Enter RollNumber</td>
+        <td>:</td>
+        <td><input type="text" id="txtRollNo"/></td>
+       </tr>
+    <tr>
+      <td>Enter Name</td>
+      <td>:</td>
+      <td><input type="text" id="txtName"/></td>
+    </tr>
+    <tr>
+      <td>Enter Department</td>
+      <td>:</td>
+      <td><input type="text" id="txtDept"/></td>
+    </tr>
+    <tr>
+      <td>Enter Image Path</td>
+      <td>:</td>
+      <td><input type="text" id="txtImagaeUrl"/></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <input type="button" id="saveStudent" id="btn" value="Add Student"/>
+      </td>
+    </tr>
+
+    </table>
+
+    <h4>List Of Students</h4>
+
+    <div id="dataDisplay"></div>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+
+    <style>
+    body{
+      background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80') no-repeat center center fixed;
+      background-size: cover;
+      background-color:rgb(104, 225, 213);
+    }
+    .hero-section {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    .hero-title {
+      font-size: 2.7rem;
+      font-weight: bold;
+      color: #1a237e;
+      text-shadow: 1px 1px 8px #fff;
+    }
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .feature-card {
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #198754;
+      margin-bottom: 10px;
+    }
+    .testimonial {
+      background: #fff8e1;
+      border-radius: 14px;
+      padding: 18px 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .testimonial .bi {
+      color: #ffb300;
+    }
+.link a{
+    text-decoration: none;
+      font-style: italic;     
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(to top,green,white,orange);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;   
+} 
+.text{
+    margin-top:40px;
+    font-size:30px;
+    color:darkmagenta;
+}
+.text::first-letter{
+    color:red;
+}
+.text1{
+    margin-top:0px;
+    font-size:30px;
+    color:darkmagenta;
+}
+.img{
+    margin-left:180px;
+
+}
+</style>
+</head>
+<body> 
+
+    <nav class="navbar link navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold text-white" href="Home_page.html" style="font-size: 1.3rem;">RideXpress</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="navbar-brand" href="Home_page.html"><i class="bi bi-house-fill"></i>Home</a>
+            <a class="navbar-brand" aria-current="page" href="Ride_search_page.html"><i class="bi bi-search"></i>Ride Search</a>
+            <a class="navbar-brand" href="Offer_ride_page.html"><i class="bi bi-car-front"></i>Offer Ride</a>
+            <a class="navbar-brand" href="Profile_page.html"><i class="bi bi-person-circle"></i>Profile</a>
+            <a class="navbar-brand" href="Contact_us_page.html"><i class="bi bi-person-lines-fill"></i>Contact Us</a>
+            <button class="btn btn-success ms-2 border border-2 border border-success bg-success" style="border-radius:23px;" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+
+              <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+               <h5 class="modal-title b-5 text-center" id="loginModalLabel">Login</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="loginName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="loginName" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+          </div>
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-success">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+  <section class="hero-section">
+    <img src="car image.jpg" height="120" class="mb-3 rounded shadow" alt="Carpooling">
+    <div class="hero-title mb-2">Welcome to <span style="color:#198754;">RideXpress</span></div>
+    <div class="hero-subtitle mb-3">Your trusted carpooling partner for safe, affordable, and eco-friendly rides.</div>
+    <a href="Ride_search_page.html" class="btn btn-success btn-lg px-4 mb-2">Get Started <i class="bi bi-arrow-right-circle ms-1"></i></a>
+  </section>
+
+  <div class="container mb-5">
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="card feature-card text-center p-3 h-100">
+          <div class="feature-icon"><i class="bi bi-people-fill"></i></div>
+          <h5 class="card-title">Find Rides</h5>
+          <p class="card-text">Quickly search and join rides going your way, anytime.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card text-center p-3 h-100">
+          <div class="feature-icon"><i class="bi bi-cash-coin"></i></div>
+          <h5 class="card-title">Offer Rides</h5>
+          <p class="card-text">Share your ride, save on travel costs, and help the environment.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card text-center p-3 h-100">
+          <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+          <h5 class="card-title">Safe & Secure</h5>
+          <p class="card-text">Verified users, secure payments, and 24/7 support for peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-5">
+    <h4 class="text-center mb-4" style="color:#1a237e;">What Our Users Say</h4>
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="testimonial">
+          <div><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i></div>
+          <p class="mb-1">“RideXpress made my daily commute affordable and fun. Highly recommended!”</p>
+          <div class="fw-bold">- Priya S.</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial">
+          <div><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i></div>
+          <p class="mb-1">“I met great people and saved money. The app is super easy to use!”</p>
+          <div class="fw-bold">- Rahul M.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center p-4 mt-5">
+    <div class="mb-2">&copy; 2025 RideXpress. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>

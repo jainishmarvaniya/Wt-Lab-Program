@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .main{
+            background-color:lightgray;
+        }
+        .head{
+            margin-bottom:40px;
+            text-align: center;
+            color:black;
+            font-family: cursive;
+        }
+         #pre {
+            background-color:green;
+             color: white;
+              border: 1px solid white;
+             border-radius:23px 23px 23px 23px;
+         }
+         #abs{
+             background-color:red;
+              color: white;
+              border: 1px solid white;
+              border-radius:23px 23px 23px 23px;
+          }
+          #allpre{
+             background-color:rgb(170, 110, 160);
+              border: 1px solid white;
+              border-radius:23px 23px 23px 23px;
+          }
+          #reate{
+            background-color: rgb(54, 146, 196);
+             border: 1px solid white;
+              border-radius:23px 23px 23px 23px;
+          }
+          #saveatt{
+            background-color: springgreen;
+            border: 1px solid white;
+              border-radius:23px 23px 23px 23px;
+          }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <h3 class="head">Student Attendance Tracker</h3>
+    <div id="tableContainer"></div>
+
+    <div class="container mt-4">
+        <h5>Summary</h5>
+        <p id="summary"></p>
+        <button onclick="allPresent()" id="allpre">All Present</button>
+        <button onclick="resetAttendance()" id="reate">Reset Attendance</button>
+        <div>
+            <b>Absent Roll Numbers is:</b>
+            <span id="absentRolls"></span>
+        </div>
+        <button onclick="saveAttendance()" id="saveatt">Save Attendance</button>
+    </div>
+
+    <script>
+        students = [
+               { roll: 100, name: "Marvaniya Janish Dharmendrabhai", enroll: "2010101169", status: "" },
+               { roll: 101, name: "Jiya Kyada", enroll: "24010101151", status: "" },
+               { roll: 102, name: "Shah Dhvani Hitesh", enroll: "24010101257", status: "" },
+               { roll: 103, name: "Saraya Mohit Haresh", enroll: "24010101251", status: "" },
+               { roll: 104, name: "Zalavadiya Heet Siddharth", enroll: "24010101311", status: "" },
+               { roll: 105, name: "Darshil Dobariya", enroll: "24010101065", status: "" },
+               { roll: 106, name: "Nafisa Gandhi", enroll: "24010101076", status: "" },
+               { roll: 107, name: "Vasani Yashvi Niteshbhai", enroll: "24010101299", status: "" },
+               { roll: 108, name: "Delvadiya Manavkumar Kirtibhai", enroll: "24010101056", status: "" },
+               { roll: 109, name: "Ashara Palak Gopalbhai", enroll: "24010101008", status: "" },
+               { roll: 110, name: "Lunagariya Greshi Kamleshbhai", enroll: "24010101158", status: "" },
+            ];
+
+        function renderTable() {
+             html = '<table class="table">';
+            html += '<tr><th>Roll No</th><th>Student Name</th><th>Enrollment No</th><th>Present</th><th>Absent</th><th>Status</th></tr>';
+            for ( i = 0; i < students.length; i++) {
+                html += '<tr class="bg-dark text-white">';
+                html += '<td>' + students[i].roll + '</td>';
+                html += '<td>' + students[i].name + '</td>';
+                html += '<td>' + students[i].enroll + '</td>';
+                html += '<td><button id="pre" onclick="present(' + i + ')">Present</button></td>';
+                html += '<td><button id="abs" onclick="absent(' + i + ')">Absent</button></td>';
+                html += '<td><span id="sta' + i + '">' + (students[i].status || '') + '</span></td>';
+                html += '</tr>';
+            }
+            html += '</table>';
+            document.getElementById('tableContainer').innerHTML = html;
+        }
+       
+
+        function present(idx) {
+            students[idx].status = 'Present';
+            renderTable();
+            updateSummary();
+        }
+
+        function absent(idx) {
+            students[idx].status = 'Absent';
+            renderTable();
+            updateSummary();
+        }
+
+        function allPresent() {
+            for ( i = 0; i < students.length; i++) {
+                students[i].status = 'Present';
+            }
+            renderTable();
+            updateSummary();
+        }
+
+        function resetAttendance() {
+            for ( i = 0; i < students.length; i++) {
+                students[i].status = '';
+            }
+            renderTable();
+            updateSummary();
+        }
+
+        function updateSummary() {
+            var presentCount = 0;
+            var absentCount = 0;
+            var absentRolls = '';
+            for ( i = 0; i < students.length; i++) {
+                if (students[i].status === 'Present') {
+                 presentCount++;
+                }
+                if (students[i].status === 'Absent') { 
+                    absentCount++; absentRolls += students[i].roll + ' ';
+                 }
+            }
+            document.getElementById('summary').innerHTML = 'Present Student is: ' + presentCount + ' | Absent Student is: ' + absentCount;
+            document.getElementById('absentRolls').innerHTML = absentCount > 0 ? absentRolls : 'None';
+        }
+
+        function saveAttendance() {
+            alert('Attendance saved!');
+        }
+
+        renderTable();
+        updateSummary();
+    </script>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change bg color</title>
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button>Click to change bg color</button>
+    <br><br>
+    <input type="text">
+    <input type="password">
+    <input type="number">
+    <input type="text">
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("input").css({backgroundColor:"red"})
+            })
+        })
+    </script>
+</body>
+</html>

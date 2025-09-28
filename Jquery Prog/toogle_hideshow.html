@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toogle hide and show</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button>Click to hide and show</button>
+    <h1 class="myEle">Hello World</h1>
+    <h1 class="myEle">How are you?</h1>
+    <p class="myEle">Lorem ipsum dolor sit amet.</p>
+    
+     
+    <script>
+        isvisible=true;
+          $(document).ready(function(){
+         $("button").click(function(){
+           if(isvisible){
+              $(".myEle").hide()
+           }
+           else{
+               $(".myEle").show()
+           }
+           isvisible=!isvisible
+       })
+    })
+    </script>
+</body>
+</html>

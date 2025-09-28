@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation enrollment</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+     <h1>Student Enrollment Number Validation</h1>
+
+    <label>Enrollment Number:-</label>
+    <input  type="tel" placeholder="Enter a Enrollment Number"/>
+
+    <button>click</button>
+     <h1 class="text1"></h1>
+    <script>
+        $(document).ready(function(){
+            
+            $("button").click(function(){
+                pattern= /^[0-9]{11}$/
+                if(pattern.test($("input").val())){
+                   $(".text1").text("valid")
+                }
+                else{
+                    $(".text1").text("invalid")
+                }
+              
+            })
+        })
+    </script>
+</body>
+</html>

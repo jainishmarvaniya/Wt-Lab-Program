@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student api 1</title>
+   
+</head>
+<body>
+     <table border="1">
+        <tr>
+            <td>Student Id</td>
+            <td>Student Name</td>
+            <td>Image</td>
+        </tr>
+
+        
+    <tbody id="tblbody">
+
+    </tbody>
+    </table>
+<script>
+    temp=''
+  const xhttp = new XMLHttpRequest();
+
+  xhttp.open("POST", "https://68830eea21fa24876a9c7724.mockapi.io/studentdata", true);
+  newData=JSON.stringify(
+    {
+        id:"newid",
+        name:"newname",
+        image:"https://avatars.githubusercontent.com/u/22224413"
+    }
+  )
+  xhttp.setRequestHeader('content-Type','application/json')
+  xhttp.send(newData);
+        xhttp.onload = function(){
+            if(xhttp.status==200){
+                data=JSON.parse(this.responseText)
+                console.log(data)
+                data.map((student)=>{
+                     temp+=`<tr>
+                        <td>${student.id}</td>
+                        <td>${student.StudentName}</td>
+                         <td><img height='100px' src='${student.Image}'</td>
+                         </tr>`
+                })
+
+                tblbody.innerHTML=temp
+            }
+            else{
+                alert("Data Not Found")
+            }
+        }
+             
+    
+
+</script>
+</body>
+</html>
